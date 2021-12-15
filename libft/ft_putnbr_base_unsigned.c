@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base_unsigned.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 15:40:47 by pat               #+#    #+#             */
-/*   Updated: 2021/12/14 20:48:59 by pat              ###   ########lyon.fr   */
+/*   Created: 2021/12/14 17:55:09 by pat               #+#    #+#             */
+/*   Updated: 2021/12/14 20:40:42 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ static int    check(char *base)
 	return (1);
 }
 
-int	ft_putnbr_base(unsigned int nbr, char *base, int i)
+int	ft_putnbr_base_unsigned(unsigned long long nbr, char *base, int i)
 {
-	unsigned long	n;
+	unsigned long long	n;
 	int			idx;
 
 	idx = indx(base);
@@ -77,8 +77,8 @@ int	ft_putnbr_base(unsigned int nbr, char *base, int i)
 			write(1, "-", 1);
 			i++;
 		}
-		if (n >= (unsigned long long)idx)
-			i = ft_putnbr_base(n / idx, base, i);
+		if (n >= (unsigned int)idx)
+			i = ft_putnbr_base_unsigned(n / idx, base, i);
 		i += ft_putchar_fd(base[n % idx], 1);
 	}
 	return (i);

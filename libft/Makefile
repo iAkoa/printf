@@ -6,7 +6,7 @@
 #    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2021/12/13 19:41:25 by pat              ###   ########lyon.fr    #
+#    Updated: 2021/12/14 20:22:42 by pat              ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_strjoin.c	\
 			ft_itoa.c		\
 			ft_putptr.c		\
-			ft_putnbr_unsigned_fd.c
+			ft_putnbr_unsigned.c		\
+			ft_putnbr_base_unsigned.c
 
 SRCS_BONUS	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\

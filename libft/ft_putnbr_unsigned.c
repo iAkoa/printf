@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 04:27:12 by pat               #+#    #+#             */
-/*   Updated: 2021/12/14 02:24:12 by pat              ###   ########lyon.fr   */
+/*   Created: 2021/12/14 20:19:01 by pat               #+#    #+#             */
+/*   Updated: 2021/12/14 20:30:33 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_putstr_fd(char *s, int fd)
-{
-	if (!s)
-	{
-		write(fd, "(null)", 6);
-		return (6);
-	}
-	write(fd, s, ft_strlen(s));
-	return (ft_strlen(s));
+int	ft_putnbr_unsigned(unsigned int n, int i)
+{	
+	if (n >= 10)
+		i = ft_putnbr_unsigned(n / 10, i);
+	i += ft_putchar_fd(n % 10 + '0', 1);
+	
+	return (i);
 }

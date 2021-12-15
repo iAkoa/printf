@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 15:37:13 by pat               #+#    #+#             */
-/*   Updated: 2021/12/13 19:49:48 by pat              ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 20:29:20 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ft_check_sign(char c, va_list *va_params)
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr_fd(va_arg(*va_params, int), 1, 0));
 	if (c == 'u')
-		return (ft_putnbr_unsigned_fd(va_arg(*va_params, unsigned int), 1, 0));
+		return (ft_putnbr_unsigned(va_arg(*va_params, unsigned int), 0));
 	if (c == 'p')
 		return (ft_putptr(va_arg(*va_params, void *)));
 	if (c == 'x')
@@ -70,14 +70,15 @@ int ft_printf(const char *arg, ...)
 }
 
 
-int main()
-{
-	char  c;
+// int main()
+// {
+// 	char  c;
 
-	c = 'c';
-	printf("%i", ft_printf("%x", -9));
-	//ft_printf("%i %c t\n", -1, 'c');
-	// printf("\n%i\n", ft_printf("%c %d %c=", 'f', 7, 'a'));
- 	// printf("\n%i\n", printf("%c %i", c, 15));
-	return (0);
-}
+// 	c = 'c';
+// 	printf("\n%i\n", ft_printf(" %u ", -1));
+// 	printf("\n%i\n", printf(" %u ", -1));
+// 	// ft_printf("%i %c t\n", -1, 'c');
+// 	// printf("\n%i\n", ft_printf("%c %d %c=", 'f', 7, 'a'));
+//  	// printf("\n%i\n", printf("%c %i", c, 15));
+// 	return (0);
+// }
